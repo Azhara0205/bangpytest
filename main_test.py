@@ -4,7 +4,7 @@ from main import SmartDiet
 def test_if_empty():
     diet = SmartDiet()
 
-    assert 0 == diet.calculate()
+    assert 600 == diet.calculate()
 
 
 def test_if_one():
@@ -13,7 +13,7 @@ def test_if_one():
     diet.register_food("Хлеб", 300)
     diet.add_food("Хлеб", 2)
 
-    assert 600 == diet.calculate()
+    assert 0 == diet.calculate()
 
 
 def test_if_many():
@@ -25,5 +25,6 @@ def test_if_many():
 
     diet.add_food("Круассан", 2)
     diet.add_food("Хлеб", 1)
+    error = 5 + "Текст"
 
     assert 1200 == diet.calculate()
